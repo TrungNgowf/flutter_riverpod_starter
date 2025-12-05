@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod_starter/core/core.dart';
+import 'package:flutter_riverpod_starter/models/models.dart';
 
-void main() {
-  runApp(const MyApp());
+class AppRoot {
+  static Future startApplication(Flavor flavor) async {
+    WidgetsFlutterBinding.ensureInitialized();
+    Env.flavor = flavor;
+    runApp(MyApp());
+  }
 }
 
 class MyApp extends StatelessWidget {
