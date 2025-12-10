@@ -1,0 +1,16 @@
+{
+  "helloWorld": "Hello World!",
+  "@helloWorld": {
+    "description": "The conventional newborn programmer greeting"
+  },
+  "countPushed": "You have pushed the button {count} times:",
+  "@countPushed": {
+    "description": "The text that precedes the count of button pushes",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "description": "The number of times the user has pressed the button"
+      }
+    }
+  }
+}

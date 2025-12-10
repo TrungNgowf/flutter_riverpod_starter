@@ -1,0 +1,16 @@
+{
+  "helloWorld": "Xin chào Thế Giới!",
+  "@helloWorld": {
+    "description": "Chào mừng bạn đến với Flutter!"
+  },
+  "countPushed": "Bạn đã nhấn nút {count} lần:",
+  "@countPushed": {
+    "description": "Số lần nhấn nút",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "description": "Số lần nhấn nút"
+      }
+    }
+  }
+}
