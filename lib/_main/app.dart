@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod_starter/core/core.dart';
 import 'package:flutter_riverpod_starter/l10n/app_localizations.dart';
 import 'package:flutter_riverpod_starter/models/models.dart';
+import 'package:flutter_riverpod_starter/utils/utils.dart';
 
 class AppRoot {
   static Future startApplication(Flavor flavor) async {
@@ -49,13 +50,13 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(AppLocalizations.of(context)!.helloWorld),
+        title: Text(context.l10n.helloWorld),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: .center,
           children: [
-            Text(AppLocalizations.of(context)!.countPushed(_counter)),
+            Text(context.l10n.countPushed(_counter)),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,

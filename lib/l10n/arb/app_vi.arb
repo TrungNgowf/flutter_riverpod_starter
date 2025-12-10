@@ -1,4 +1,5 @@
 {
+  "@@locale": "vi",
   "helloWorld": "Xin chào Thế Giới!",
   "@helloWorld": {
     "description": "Chào mừng bạn đến với Flutter!"
