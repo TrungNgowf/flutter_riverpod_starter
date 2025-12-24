@@ -3,20 +3,21 @@ import 'package:flutter_riverpod_starter/core/core.dart';
 import 'package:flutter_riverpod_starter/l10n/app_localizations.dart';
 import 'package:flutter_riverpod_starter/models/models.dart';
 import 'package:flutter_riverpod_starter/utils/utils.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class AppRoot {
   static Future startApplication(Flavor flavor) async {
     WidgetsFlutterBinding.ensureInitialized();
     Env.flavor = flavor;
-    runApp(MyApp());
+    runApp(ProviderScope(child: MyApp()));
   }
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends ConsumerWidget {
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return MaterialApp(
       title: 'TurnG App',
       debugShowCheckedModeBanner: false,
@@ -50,13 +51,13 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(context.l10n.helloWorld),
+        title: Text(context.ext.l10n.helloWorld),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: .center,
           children: [
-            Text(context.l10n.countPushed(_counter)),
+            Text(context.ext.l10n.countPushed(_counter)),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
