@@ -17,6 +17,8 @@ final class Env {
     Flavor.production => _ProductionEnv(),
   };
 
+  static bool get isProd => flavor == Flavor.production;
+
   @EnviedField()
   final String baseUrl = _instance.baseUrl;
 }

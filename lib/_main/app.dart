@@ -21,11 +21,17 @@ class MyApp extends ConsumerWidget {
     return MaterialApp(
       title: 'TurnG App',
       debugShowCheckedModeBanner: false,
-      locale: AppLanguage.vi.locale,
+      locale: AppLanguage.en.locale,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
-      home: MyHomePage(),
+      home: Env.isProd
+          ? const MyHomePage()
+          : Banner(
+              message: Env.flavor.name.toUpperCase(),
+              location: BannerLocation.topEnd,
+              child: const MyHomePage(),
+            ),
     );
   }
 }

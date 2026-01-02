@@ -5,7 +5,7 @@ part 'app_config.g.dart';
 
 @Riverpod(keepAlive: true)
 AppConfig appConfig(Ref ref) {
-  return switch (Env.flavor) { 
+  return switch (Env.flavor) {
     .develop => AppConfig.develop(),
     .staging => AppConfig.staging(),
     .production => AppConfig.production(),
