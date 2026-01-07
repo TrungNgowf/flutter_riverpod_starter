@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod_starter/core/core.dart';
+import 'package:flutter_riverpod_starter/core/theme/theme_provider.dart';
 import 'package:flutter_riverpod_starter/l10n/app_localizations.dart';
 import 'package:flutter_riverpod_starter/models/models.dart';
 import 'package:flutter_riverpod_starter/utils/utils.dart';
@@ -18,36 +19,44 @@ class MyApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final themeMode = ref.watch(themeControllerProvider);
     return MaterialApp(
       title: 'TurnG App',
       debugShowCheckedModeBanner: false,
       locale: AppLanguage.en.locale,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
-      home: Env.isProd
-          ? const MyHomePage()
-          : Banner(
-              message: Env.flavor.name.toUpperCase(),
-              location: BannerLocation.topEnd,
-              child: const MyHomePage(),
-            ),
+      theme: AppTheme.light,
+      darkTheme: AppTheme.dark,
+      themeMode: themeMode,
+      home: _buildRootPage(),
     );
+  }
+
+  StatefulWidget _buildRootPage() {
+    return Env.isProd
+        ? const MyHomePage()
+        : Banner(
+            message: Env.flavor.name.toUpperCase(),
+            location: BannerLocation.topEnd,
+            child: const MyHomePage(),
+          );
   }
 }
 
-class MyHomePage extends StatefulWidget {
+class MyHomePage extends ConsumerStatefulWidget {
   const MyHomePage({super.key});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  ConsumerState<MyHomePage> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends ConsumerState<MyHomePage> {
   int _counter = 0;
 
-  void _incrementCounter() {
+  void _onClick() {
     setState(() {
+      ref.read(themeControllerProvider.notifier).toggleTheme();
       _counter++;
     });
   }
@@ -55,10 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(context.ext.l10n.helloWorld),
-      ),
+      appBar: AppBar(title: Text(context.ext.l10n.helloWorld)),
       body: Center(
         child: Column(
           mainAxisAlignment: .center,
@@ -72,7 +78,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: _onClick,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ),

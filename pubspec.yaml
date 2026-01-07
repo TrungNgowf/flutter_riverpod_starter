@@ -46,6 +46,8 @@ dependencies:
   riverpod_annotation: ^3.0.3
   flutter_launcher_icons: ^0.14.4
   fpdart: ^1.2.0
+  flex_seed_scheme: ^4.0.1
+  google_fonts: ^6.3.3
 
 dev_dependencies:
   flutter_test:
