@@ -48,6 +48,8 @@ dependencies:
   fpdart: ^1.2.0
   flex_seed_scheme: ^4.0.1
   google_fonts: ^6.3.3
+  animated_bottom_navigation_bar: ^1.4.0
+  iconsax_flutter: ^1.0.1
 
 dev_dependencies:
   flutter_test:

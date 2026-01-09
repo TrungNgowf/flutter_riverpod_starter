@@ -18,4 +18,25 @@ class AppLocalizationsVi extends AppLocalizations {
   String countPushed(int count) {
     return 'Bạn đã nhấn nút $count lần:';
   }
+
+  @override
+  String get homePage => 'Trang chủ';
+
+  @override
+  String get searchPage => 'Tìm kiếm';
+
+  @override
+  String get settingsPage => 'Cài đặt';
+
+  @override
+  String get notificationPage => 'Thông báo';
+
+  @override
+  String get scanPage => 'Quét mã';
+
+  @override
+  String get theme => 'Chủ đề';
+
+  @override
+  String get language => 'Ngôn ngữ';
 }

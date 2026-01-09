@@ -13,5 +13,27 @@
         "description": "The number of times the user has pressed the button"
       }
     }
-  }
+  },
+  "homePage": "Home",
+  "@homePage": {
+    "description": "The title of the home page"
+  },
+  "searchPage": "Search",
+  "@searchPage": {
+    "description": "The title of the search page"
+  },
+  "settingsPage": "Settings",
+  "@settingsPage": {
+    "description": "The title of the settings page"
+  },
+  "notificationPage": "Notification",
+  "@notificationPage": {
+    "description": "The title of the notification page"
+  },
+  "scanPage": "Scan",
+  "@scanPage": {
+    "description": "The title of the scan page"
+  },
+  "theme": "Theme",
+  "language": "Language"
 }

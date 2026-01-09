@@ -13,5 +13,27 @@
         "description": "Số lần nhấn nút"
       }
     }
-  }
+  },
+  "homePage": "Trang chủ",
+  "@homePage": {
+    "description": "Tiêu đề của trang chủ"
+  },
+  "searchPage": "Tìm kiếm",
+  "@searchPage": {
+    "description": "Tiêu đề của trang tìm kiếm"
+  },
+  "settingsPage": "Cài đặt",
+  "@settingsPage": {
+    "description": "Tiêu đề của trang cài đặt"
+  },
+  "notificationPage": "Thông báo",
+  "@notificationPage": {
+    "description": "Tiêu đề của trang thông báo"
+  },
+  "scanPage": "Quét mã",
+  "@scanPage": {
+    "description": "Tiêu đề của trang quét mã"
+  },
+  "theme": "Chủ đề",
+  "language": "Ngôn ngữ"
 }

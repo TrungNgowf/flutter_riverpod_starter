@@ -87,7 +87,7 @@ abstract final class AppSizes {
   static const double inputHeightSm = 44;
 
   static const double appBarHeight = 56;
-  static const double bottomNavHeight = 80;
+  static const double bottomNavHeight = 72;
   static const double fabSize = 56;
   static const double fabSizeSm = 40;
 

@@ -18,4 +18,25 @@ class AppLocalizationsEn extends AppLocalizations {
   String countPushed(int count) {
     return 'You have pushed the button $count times:';
   }
+
+  @override
+  String get homePage => 'Home';
+
+  @override
+  String get searchPage => 'Search';
+
+  @override
+  String get settingsPage => 'Settings';
+
+  @override
+  String get notificationPage => 'Notification';
+
+  @override
+  String get scanPage => 'Scan';
+
+  @override
+  String get theme => 'Theme';
+
+  @override
+  String get language => 'Language';
 }

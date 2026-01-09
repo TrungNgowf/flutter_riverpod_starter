@@ -108,6 +108,48 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'You have pushed the button {count} times:'**
   String countPushed(int count);
+
+  /// The title of the home page
+  ///
+  /// In en, this message translates to:
+  /// **'Home'**
+  String get homePage;
+
+  /// The title of the search page
+  ///
+  /// In en, this message translates to:
+  /// **'Search'**
+  String get searchPage;
+
+  /// The title of the settings page
+  ///
+  /// In en, this message translates to:
+  /// **'Settings'**
+  String get settingsPage;
+
+  /// The title of the notification page
+  ///
+  /// In en, this message translates to:
+  /// **'Notification'**
+  String get notificationPage;
+
+  /// The title of the scan page
+  ///
+  /// In en, this message translates to:
+  /// **'Scan'**
+  String get scanPage;
+
+  /// No description provided for @theme.
+  ///
+  /// In en, this message translates to:
+  /// **'Theme'**
+  String get theme;
+
+  /// No description provided for @language.
+  ///
+  /// In en, this message translates to:
+  /// **'Language'**
+  String get language;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

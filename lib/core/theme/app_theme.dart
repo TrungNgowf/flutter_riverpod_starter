@@ -386,9 +386,9 @@ abstract final class AppTheme {
   ) {
     return BottomNavigationBarThemeData(
       elevation: 0,
-      backgroundColor: colorScheme.surface,
-      selectedItemColor: colorScheme.primary,
-      unselectedItemColor: colorScheme.onSurfaceVariant,
+      backgroundColor: colorScheme.primary,
+      selectedItemColor: colorScheme.onPrimary,
+      unselectedItemColor: colorScheme.inversePrimary,
       type: BottomNavigationBarType.fixed,
       showSelectedLabels: true,
       showUnselectedLabels: true,
