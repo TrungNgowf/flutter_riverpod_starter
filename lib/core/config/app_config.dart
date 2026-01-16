@@ -13,29 +13,34 @@ AppConfig appConfig(Ref ref) {
 }
 
 class AppConfig {
+  final bool enableLogging;
   final bool enableAnalytics;
   final bool enableCrashlytics;
   final FeatureFlags featureFlags;
 
   const AppConfig._({
+    required this.enableLogging,
     required this.enableAnalytics,
     required this.enableCrashlytics,
     required this.featureFlags,
   });
 
   factory AppConfig.develop() => ._(
+    enableLogging: true,
     enableAnalytics: false,
     enableCrashlytics: false,
     featureFlags: .develop(),
   );
 
   factory AppConfig.staging() => ._(
+    enableLogging: true,
     enableAnalytics: false,
     enableCrashlytics: false,
     featureFlags: .staging(),
   );
 
   factory AppConfig.production() => ._(
+    enableLogging: false,
     enableAnalytics: true,
     enableCrashlytics: true,
     featureFlags: .production(),

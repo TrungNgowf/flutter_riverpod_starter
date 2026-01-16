@@ -27,13 +27,24 @@ class MyApp extends ConsumerWidget {
 
     return MaterialApp.router(
       title: 'TurnG App',
-      debugShowCheckedModeBanner: Env.flavor != Flavor.production,
+      debugShowCheckedModeBanner: false,
       locale: language.locale,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       theme: AppTheme.light,
       darkTheme: AppTheme.dark,
       themeMode: themeMode,
+      builder: (context, child) {
+        if (Env.flavor == Flavor.production) {
+          return child ?? const SizedBox.shrink();
+        }
+
+        return Banner(
+          message: Env.flavor.name.toUpperCase(),
+          location: BannerLocation.topEnd,
+          child: child ?? const SizedBox.shrink(),
+        );
+      },
       routerConfig: _appRouter.config(),
     );
   }

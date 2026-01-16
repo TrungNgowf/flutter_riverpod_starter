@@ -1,7 +1,6 @@
 import 'dart:developer';
 import 'package:flutter_riverpod_starter/core/environments/env.dart';
 import 'package:flutter_riverpod_starter/models/models.dart';
-import 'package:flutter_riverpod_starter/utils/utils.dart';
 import 'package:logger/logger.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 

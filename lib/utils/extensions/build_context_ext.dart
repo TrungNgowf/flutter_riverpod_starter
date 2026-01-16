@@ -1,8 +1,6 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod_starter/core/core.dart';
 import 'package:flutter_riverpod_starter/l10n/app_localizations.dart';
-import 'package:flutter_riverpod_starter/router/app_router.dart';
 
 import 'extendable.dart';
 
