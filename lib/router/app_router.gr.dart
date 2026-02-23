@@ -105,3 +105,19 @@ class SettingsRoute extends PageRouteInfo<void> {
     },
   );
 }
+
+/// generated route for
+/// [SongsPage]
+class SongsRoute extends PageRouteInfo<void> {
+  const SongsRoute({List<PageRouteInfo>? children})
+    : super(SongsRoute.name, initialChildren: children);
+
+  static const String name = 'SongsRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const SongsPage();
+    },
+  );
+}

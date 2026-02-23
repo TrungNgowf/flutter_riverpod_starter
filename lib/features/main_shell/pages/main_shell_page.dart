@@ -55,11 +55,12 @@ class MainShellPage extends ConsumerWidget {
         final tabsRouter = AutoTabsRouter.of(context);
         return Scaffold(
           body: child,
+          // Floating button is the middle button
           floatingActionButton: FloatingActionButton(
             shape: const CircleBorder(),
-            child: const Icon(Iconsax.scanning),
+            child: const Icon(Iconsax.music),
             onPressed: () {
-              context.router.push(const ScanRoute());
+              context.router.push(const SongsRoute());
             },
           ),
           floatingActionButtonLocation:
@@ -82,14 +83,14 @@ class MainShellPage extends ConsumerWidget {
                     size: AppSizes.iconMd,
                     color: isActive
                         ? context.ext.colors.onPrimary
-                        : context.ext.colors.inversePrimary,
+                        : context.ext.colors.onPrimary.withValues(alpha: 0.5),
                   ),
                   Text(
                     pages[index].label,
                     style: context.ext.textTheme.labelSmall?.copyWith(
                       color: isActive
                           ? context.ext.colors.onPrimary
-                          : context.ext.colors.inversePrimary,
+                          : context.ext.colors.onPrimary.withValues(alpha: 0.5),
                     ),
                   ),
                 ],

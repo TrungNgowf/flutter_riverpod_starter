@@ -21,5 +21,8 @@ analyzer:
   plugins:
     - riverpod_lint
 
+  errors:
+    invalid_annotation_target: ignore
+
 plugins:
   riverpod_lint: ^3.0.3

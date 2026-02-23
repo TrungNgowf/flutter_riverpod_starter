@@ -4,6 +4,7 @@ import 'package:flutter_riverpod_starter/features/notifications/pages/notificati
 import 'package:flutter_riverpod_starter/features/scan/pages/scan_page.dart';
 import 'package:flutter_riverpod_starter/features/search/pages/search_page.dart';
 import 'package:flutter_riverpod_starter/features/settings/pages/settings_page.dart';
+import 'package:flutter_riverpod_starter/features/songs/pages/songs_page.dart';
 
 import '../features/main_shell/pages/main_shell_page.dart';
 
@@ -24,5 +25,6 @@ class AppRouter extends RootStackRouter {
       ],
     ),
     AutoRoute(page: ScanRoute.page),
+    AutoRoute(page: SongsRoute.page),
   ];
 }

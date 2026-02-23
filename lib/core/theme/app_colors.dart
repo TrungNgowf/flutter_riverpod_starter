@@ -2,15 +2,15 @@ import 'package:flex_seed_scheme/flex_seed_scheme.dart';
 import 'package:flutter/material.dart';
 
 abstract final class AppColors {
-  static const Color primary = Color(0xFF1675F2);
+  static const Color primary = Color(0xFF0D47A1);
 
-  static const Color secondary = Color(0xFF3084F2);
+  static const Color secondary = Color(0xFF1976D2);
 
   static const Color tertiary = Color(0xFFF2E96D);
 
-  static const Color neutral = Color(0xFF566873);
+  static const Color neutral = Color(0xFF212121);
 
-  static const Color surface = Color(0xFFF1F2F0);
+  static const Color surface = Color(0xFFFEFEFE);
 
   /// Success states
   static const Color success = Color(0xFF10B981);

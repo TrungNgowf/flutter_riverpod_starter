@@ -10,5 +10,4 @@ export 'api_helpers/api_result.dart';
 // Interceptors
 export 'interceptors/auth_interceptor.dart';
 export 'interceptors/error_interceptor.dart';
-export 'interceptors/logging_interceptor.dart';
 export 'interceptors/retry_interceptor.dart';

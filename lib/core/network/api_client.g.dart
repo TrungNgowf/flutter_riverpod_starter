@@ -52,7 +52,7 @@ final class ApiClientProvider
   }
 }
 
-String _$apiClientHash() => r'16c14e7c89f61d556b93bfbce5cbba39e56172d1';
+String _$apiClientHash() => r'd05ac8387ede62e2786c639e895d57dca28208d2';
 
 /// Provider for public API client (no authentication required)
 
@@ -98,4 +98,4 @@ final class PublicApiClientProvider
   }
 }
 
-String _$publicApiClientHash() => r'cbed589778b2cb3ca42d2dad752add9dee73aa45';
+String _$publicApiClientHash() => r'2149c633c96ab7eb37d32464688461f06eae071f';

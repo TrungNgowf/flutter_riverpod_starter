@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter_riverpod_starter/core/core.dart';
 import 'package:flutter_riverpod_starter/utils/utils.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:talker_dio_logger/talker_dio_logger.dart';
 
 part 'api_client.g.dart';
 
@@ -52,10 +53,9 @@ class ApiClient {
     required Dio dio,
     required AppConfig config,
     TokenManager? tokenManager,
-  })
-    : _dio = dio,
-      _config = config,
-      _tokenManager = tokenManager;
+  }) : _dio = dio,
+       _config = config,
+       _tokenManager = tokenManager;
 
   /// Create an authenticated API client
   factory ApiClient({
@@ -80,10 +80,6 @@ class ApiClient {
       ),
     );
 
-    // Add interceptors in order
-    // 1. Timing (must be first to track request duration)
-    dio.interceptors.add(TimingInterceptor());
-
     // 2. Auth interceptor (adds token, handles refresh)
     dio.interceptors.add(
       AuthInterceptor(
@@ -101,11 +97,11 @@ class ApiClient {
     // 4. Logging interceptor (logs requests/responses)
     if (config.enableLogging) {
       dio.interceptors.add(
-        LoggingInterceptor(
-          logger: logger,
-          logRequestBody: true,
-          logResponseBody: true,
-          logHeaders: true,
+        TalkerDioLogger(
+          settings: const TalkerDioLoggerSettings(
+            printRequestHeaders: true,
+            printResponseTime: true,
+          ),
         ),
       );
     }
@@ -136,20 +132,17 @@ class ApiClient {
       ),
     );
 
-    // Add interceptors (without auth)
-    dio.interceptors.add(TimingInterceptor());
-
     dio.interceptors.add(
       RetryInterceptor(dio: dio, config: RetryConfig.defaultConfig),
     );
 
     if (config.enableLogging) {
       dio.interceptors.add(
-        LoggingInterceptor(
-          logger: logger,
-          logRequestBody: true,
-          logResponseBody: true,
-          logHeaders: true,
+        TalkerDioLogger(
+          settings: const TalkerDioLoggerSettings(
+            printRequestHeaders: true,
+            printResponseTime: true,
+          ),
         ),
       );
     }
