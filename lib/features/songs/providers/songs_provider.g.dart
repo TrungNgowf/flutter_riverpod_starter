@@ -8,15 +8,12 @@ part of 'songs_provider.dart';
 
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, type=warning
-/// Provider for managing songs list state
 
 @ProviderFor(SongsNotifier)
 const songsProvider = SongsNotifierProvider._();
 
-/// Provider for managing songs list state
 final class SongsNotifierProvider
     extends $NotifierProvider<SongsNotifier, SongsState> {
-  /// Provider for managing songs list state
   const SongsNotifierProvider._()
     : super(
         from: null,
@@ -44,9 +41,7 @@ final class SongsNotifierProvider
   }
 }
 
-String _$songsNotifierHash() => r'0f1bd82b07126711dfce04ed4d0678997f61fb1a';
-
-/// Provider for managing songs list state
+String _$songsNotifierHash() => r'582dc6d41f9698569cf4ed72a10f49cde32c151a';
 
 abstract class _$SongsNotifier extends $Notifier<SongsState> {
   SongsState build();
